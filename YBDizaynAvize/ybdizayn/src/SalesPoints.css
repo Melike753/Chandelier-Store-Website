@@ -1,0 +1,88 @@
+.sales-points-container {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.sales-points-container h2 {
+  font-size: 2rem;
+  color: #01215b;
+  font-family: "Georgia", serif;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.sales-points-container h3 {
+  font-size: 1.5rem;
+  color: #01215b;
+  font-family: "Georgia", serif;
+  font-weight: bold;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  padding: 25px;
+  border-radius: 15px;
+  width: 260px;
+  margin: 15px;
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.2),
+    0 14px 28px rgba(0, 0, 0, 0.2);
+}
+
+.card a {
+  display: inline-block;
+  color: #fff;
+  background-color: #e6502f;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 8px 14px;
+  border-radius: 5px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.card a:hover {
+  background-color: #ff6347;
+  transform: scale(1.07);
+}
+
+.card img {
+  max-width: 180px;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+  filter: grayscale(40%);
+  border-radius: 10px;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+
+.card iframe {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+/* Attributes Section Genel Stiller */
+.attributes-section {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 900px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.attributes-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+  border-bottom: 2px solid #2575fc;
+  padding-bottom: 10px;
+}
+
+/* Yeni Attribute Ekleme */
+.add-attribute {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.add-attribute input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  flex: 1;
+  max-width: 400px;
+}
+
+.add-attribute input:focus {
+  border-color: #6a11cb;
+  outline: none;
+}
+
+.add-attribute button {
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.add-attribute button:hover {
+  background: linear-gradient(90deg, #2575fc, #6a11cb);
+  transform: translateY(-3px);
+}
+
+/* Mevcut Attributes */
+.attributes-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.attributes-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.attributes-list li:hover {
+  background-color: #f0f8ff;
+}
+
+.attributes-list .selected {
+  background-color: #2575fc;
+  color: white;
+}
+
+.attributes-list .delete-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background: #e74c3c;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.attributes-list .delete-btn:hover {
+  background: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Seçilen Attribute Değerleri */
+.modal-content h4 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.modal-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.modal-content ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content ul li:hover {
+  background-color: #f0f8ff;
+}
+
+.modal-content .delete-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background: #e74c3c;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.modal-content .delete-btn:hover {
+  background: #c0392b;
+  transform: scale(1.05);
+}
+
+.modal-content .add-value {
+  display: flex;
+  gap: 14px;
+  margin: 20px auto;
+}
+
+.modal-content .add-value input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  flex: 1;
+}
+
+.modal-content .add-value input:focus {
+  border-color: #6a11cb;
+  outline: none;
+}
+
+.modal-content .add-value button {
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+  margin: 6px auto;
+}
+
+.modal-content .add-value button:hover {
+  background: linear-gradient(90deg, #2575fc, #6a11cb);
+  transform: translateY(-3px);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-width, 250px);
+  width: calc(100% - var(--sidebar-width, 250px));
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 460px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+.modal-content h4 {
+  margin-bottom: 20px;
+}

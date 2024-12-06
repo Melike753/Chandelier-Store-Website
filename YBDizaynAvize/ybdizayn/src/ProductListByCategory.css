@@ -1,0 +1,187 @@
+/* Ana Konteyner */
+.category-product-list-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  color: #333;
+  background: linear-gradient(to bottom, #f4f4f8, #e9e9ee);
+}
+
+/* Başlık */
+.category-product-list-container h2 {
+  font-size: 2.2rem;
+  color: #361872;
+  margin-bottom: 35px;
+  margin-top: -5px;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+
+/* Ürün Grid Alanı */
+.category-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+/* Ürün Kart Yapısı */
+.category-product-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  max-width: 380px;
+  text-align: center;
+  padding: 15px;
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.category-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Resim Alanı */
+.category-product-image img {
+  width: 70%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+  background: #f4f4f8;
+}
+
+.category-product-card:hover .category-product-image img {
+  transform: scale(1.05);
+}
+
+/* Ürün Detay Alanı */
+.category-product-details {
+  padding: 20px;
+  text-align: center;
+}
+
+.category-product-details h1 {
+  font-size: 1.2rem;
+  color: #361872;
+  margin-bottom: 12px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.category-product-details p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  height: 45px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Fiyat Alanı */
+.pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.discount-box {
+  background: #fc3d3d;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.15);
+  margin-bottom: 5px;
+}
+
+.price-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.price-details .original-price {
+  font-size: 0.9rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.price-details h2 {
+  font-size: 1.2rem;
+  color: #361872;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+/* Aksiyon Butonları */
+.action-buttons {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.action-buttons .view-details {
+  background: linear-gradient(135deg, #361872, #4b2a92);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.action-buttons .view-details:hover {
+  background: linear-gradient(135deg, #4b2a92, #361872);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+  .category-product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-product-image img {
+    width: 70%;
+    height: auto;
+  }
+
+  .category-product-card {
+    max-width: 100%;
+  }
+
+  .category-product-details h1 {
+    font-size: 1.15rem;
+  }
+
+  .category-product-details p {
+    font-size: 0.9rem;
+  }
+
+  .price-details h2 {
+    font-size: 1rem;
+  }
+}

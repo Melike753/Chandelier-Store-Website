@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+/* Products Section */
+.products-list {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 1000px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.products-list h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+  border-bottom: 2px solid #2575fc;
+  padding-bottom: 10px;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-product-btn {
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.add-product-btn:hover {
+  background: linear-gradient(90deg, #2575fc, #6a11cb);
+  transform: translateY(-4px);
+}
+
+/* Table Styles */
+.products-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: linear-gradient(90deg, #1d6ffc, #650ac6);
+}
+
+.products-list th,
+.products-list td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.products-list th {
+  color: white;
+  font-size: 1rem;
+}
+
+.products-list td {
+  background-color: #f9f9f9;
+  font-size: 0.95rem;
+}
+
+.products-list tr:hover td {
+  background-color: #f0f8ff;
+  transition: background-color 0.3s ease;
+}
+
+/* Product Name Link */
+.products-list .product-name {
+  color: #2575fc;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.products-list .product-name:hover {
+  color: #6a11cb;
+}
+
+/* Actions Buttons */
+.products-list td button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  background: #e74c3c;
+  color: white;
+  margin-left: 10px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.products-list td button:hover {
+  background: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  position: relative;
+  cursor: auto;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+
+/* Form Input Styles */
+.product-form input,
+.product-form textarea,
+.product-form select,
+.variant-form input,
+.variant-form select {
+  padding: 8px;
+  font-size: 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.product-form input:focus,
+.product-form textarea:focus,
+.product-form select:focus,
+.variant-form input:focus,
+.variant-form select:focus {
+  border-color: #6a11cb;
+  outline: none;
+}
+
+/* Buttons */
+.product-form button,
+.variant-form button {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-form button:hover,
+.variant-form button:hover {
+  background: linear-gradient(90deg, #2575fc, #6a11cb);
+  transform: translateY(-2px);
+}
+
+/* Attribute Row */
+.variant-form .attribute-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.variant-form .attribute-row label {
+  flex: 1;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.variant-form .attribute-row select {
+  flex: 3;
+}
+
+/* Image Upload and Previews */
+.variant-form .image-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 8px;
+}
+
+.variant-form .image-row input[type="file"] {
+  flex: 4;
+}
+
+.variant-form .image-row label {
+  flex: 2;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.variant-form .image-previews {
+  flex: 1.5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.variant-form .image-previews img {
+  max-width: 70px;
+  max-height: 50px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Store Links */
+.store-urls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.store-urls div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 15px;
+}
+
+.store-urls select {
+  flex: 2;
+  font-size: 15px;
+}
+
+.store-urls input {
+  flex: 3;
+  font-size: 15px;
+}
+
+.store-urls button {
+  flex: 0.5;
+  font-size: 10px;
+  margin-bottom: 6px;
+}
