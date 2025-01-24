@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+/* Store Section Genel Stiller */
+.store-section {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 900px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.store-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+  border-bottom: 2px solid #2575fc;
+  padding-bottom: 10px;
+}
+
+/* Yeni Mağaza Ekleme */
+.add-store {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.add-store input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  flex: 1;
+  max-width: 400px;
+}
+
+.add-store input:focus {
+  border-color: #6a11cb;
+  outline: none;
+}
+
+.add-store button {
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.add-store button:hover {
+  background: linear-gradient(90deg, #2575fc, #6a11cb);
+  transform: translateY(-3px);
+}
+
+/* Mevcut Mağazalar */
+.store-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.store-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.store-list li:hover {
+  background-color: #f0f8ff;
+}
+
+.store-list .delete-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background: #e74c3c;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.store-list .delete-btn:hover {
+  background: #c0392b;
+  transform: scale(1.05);
+}

@@ -1,0 +1,767 @@
+/* Temel Renk Ayarları */
+:root {
+  --primary-color: #3b2e5a;
+  --secondary-color: #f4f4f9;
+  --accent-color: #ffba08;
+  --text-color: #333;
+  --background-color: #fafafa;
+  --card-shadow: rgba(0, 0, 0, 0.15);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Header ve Navbar */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: linear-gradient(135deg, rgba(43, 0, 84, 0.9), rgba(0, 0, 0, 0.8));
+  color: var(--secondary-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Header Scroll Animasyonu */
+.header.scrolled {
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Logo */
+.header .logo h1 {
+  font-size: 2.1rem;
+  color: var(--accent-color);
+  font-weight: bold;
+  font-family: "Playfair Display", serif;
+  transition: transform 0.3s ease;
+}
+
+.header .logo h1:hover {
+  transform: scale(1.05);
+}
+
+.header .logo p {
+  font-size: 1rem;
+  font-family: "Playfair Display", serif;
+}
+
+/* Navbar Links */
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+  transform: translateY(-4px);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+  .header {
+    padding: 25px 15px;
+  }
+
+  .header .logo h1 {
+    font-size: 1.35rem;
+  }
+
+  .header .logo p {
+    font-size: 0.85rem;
+    margin-right: 6px;
+  }
+
+  .nav-links {
+    gap: 8px;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+}
+
+/* Kategori Listesi */
+.categories {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 12px 10px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.categories li {
+  list-style: none;
+}
+
+.categories a {
+  display: block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: var(--secondary-color);
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 150px;
+}
+
+/* Hover Efekti */
+.categories a::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.15),
+    transparent 70%
+  );
+  transition: transform 0.5s ease;
+  transform: rotate(-45deg);
+}
+
+.categories a:hover::before {
+  transform: translate(25%, 25%);
+}
+
+.categories a:hover {
+  background: linear-gradient(
+    135deg,
+    var(--accent-color),
+    var(--primary-color)
+  );
+  color: var(--secondary-color);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+  .categories {
+    gap: 10px;
+  }
+
+  .categories a {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    min-width: 100px;
+  }
+}
+
+/* Slider */
+.slider {
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  height: 600px;
+}
+
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.slider:hover img {
+  transform: scale(1.03);
+}
+
+.dots-container {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  opacity: 0.6;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dot.active,
+.dot:hover {
+  background: var(--primary-color);
+  transform: scale(1.3);
+  opacity: 1;
+}
+
+/* Öne Çıkan Ürünler */
+.products {
+  padding: 20px;
+  text-align: center;
+  background-color: var(--secondary-color);
+}
+
+.products h2 {
+  color: var(--primary-color);
+  margin-bottom: 40px;
+  font-size: 2.1rem;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  justify-items: center;
+}
+
+.product-item {
+  background: #fff;
+  padding: 24px 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px var(--card-shadow);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 360px;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px var(--card-shadow);
+}
+
+.product-item img {
+  width: 90%;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.product-item img:hover {
+  transform: scale(1.04);
+}
+
+.product-item h3 {
+  color: var(--primary-color);
+  margin: 18px 0 12px;
+  font-size: 20px;
+}
+
+/* İncele Butonu */
+.product-item a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 760;
+  display: inline-block;
+  padding: 5px 25px;
+  margin-top: 22px;
+  border: 2px solid var(--accent-color);
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-item a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2),
+    transparent 60%
+  );
+  transition: all 0.6s ease;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+}
+
+.product-item a:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.product-item a:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+}
+
+.product-item a:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+  .products {
+    padding: 30px;
+  }
+
+  .products h2 {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+  }
+
+  .product-list {
+    grid-template-columns: 1fr;
+  }
+
+  .product-item {
+    padding: 20px 15px;
+  }
+
+  .product-item img {
+    width: 100%;
+  }
+
+  .product-item h3 {
+    font-size: 1.4rem;
+  }
+
+  .product-item a {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Intro Bölümü */
+.intro {
+  padding: 10px 25px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(43, 0, 84, 0.9), rgba(0, 0, 0, 0.8));
+  color: var(--secondary-color);
+  border-radius: 15px;
+  max-width: 860px;
+  margin: 50px auto;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+  z-index: 1;
+}
+
+.intro::before,
+.intro::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1),
+    transparent 70%
+  );
+  top: -100%;
+  left: -100%;
+  animation: rotateBackground 10s linear infinite;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+@keyframes rotateBackground {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.intro:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.intro h2 {
+  font-size: 2.4rem;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  position: relative;
+  display: inline-block;
+  animation: popIn 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.intro h2::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 320px;
+  height: 2px;
+  background: var(--accent-color);
+  transform: translateX(-50%);
+  border-radius: 5px;
+  box-shadow:
+    0 0 15px var(--accent-color),
+    0 0 30px var(--accent-color);
+  animation: glow 1.5s ease infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow:
+      0 0 15px var(--accent-color),
+      0 0 30px var(--accent-color);
+  }
+  to {
+    box-shadow:
+      0 0 5px var(--accent-color),
+      0 0 20px var(--accent-color);
+  }
+}
+
+/* Paragraf */
+.intro p {
+  font-size: 1.06rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 780px;
+  margin: 20px auto 0;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease forwards 0.5s;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Daha Fazla Bilgi Butonu */
+.intro a {
+  display: inline-block;
+  color: var(--accent-color);
+  font-weight: 600;
+  padding: 12px 30px;
+  border: 2px solid var(--accent-color);
+  border-radius: 25px;
+  text-decoration: none;
+  margin: 18px auto;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.intro a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2),
+    transparent 60%
+  );
+  transition: transform 0.5s ease;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+}
+
+.intro a:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.intro a:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px);
+}
+
+.intro a:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+  .intro {
+    padding: 15px 20px;
+    margin: 30px auto;
+    max-width: 90%;
+  }
+
+  .intro h2 {
+    font-size: 1.7rem;
+  }
+
+  .intro h2::before {
+    width: 180px;
+  }
+
+  .intro p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  .intro a {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(135deg, rgba(43, 0, 84, 0.9), rgba(0, 0, 0, 0.8));
+  color: var(--secondary-color);
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+  position: relative;
+  border-top: 5px solid var(--accent-color);
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.15),
+    transparent 70%
+  );
+  opacity: 0.2;
+  z-index: -1;
+  animation: animateBackground 20s linear infinite;
+}
+
+@keyframes animateBackground {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(100px, 100px);
+  }
+}
+
+/* Footer Column */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.footer-column h3 {
+  color: var(--accent-color);
+  font-size: 1.7rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+  position: relative;
+  font-family: "Merriweather", serif;
+}
+
+.footer-column h3::after {
+  content: "";
+  display: block;
+  width: 250px;
+  height: 2px;
+  margin: 8px auto 0;
+  border-radius: 5px;
+  opacity: 0.8;
+  background: var(--accent-color);
+  box-shadow:
+    0 0 15px var(--accent-color),
+    0 0 30px var(--accent-color);
+  animation: glow 1.5s ease infinite alternate;
+}
+
+/* Paragraphs and Links */
+.footer-column p,
+.footer-column ul,
+.footer-column a {
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: var(--accent-color);
+  transform: translateX(5px);
+}
+
+/* Sosyal Medya İkonları */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.social-icons a {
+  color: var(--secondary-color);
+  font-size: 1.9rem;
+  padding: 3px 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    background 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-icons a:hover {
+  color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.2);
+}
+
+/* Telif Hakkı */
+.footer-copyright {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+  .footer {
+    grid-template-columns: 1fr;
+    padding: 30px 10px;
+  }
+
+  .footer-column {
+    margin-bottom: 30px;
+  }
+
+  .footer-column h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  .footer-column p,
+  .footer-column ul,
+  .footer-column a {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .footer-copyright {
+    font-size: 0.9rem;
+  }
+}
