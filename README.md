@@ -193,6 +193,48 @@ Her bir API, React tarafından Axios ile çağrılır ve gelen veriler bileşenl
 
 ---
 
+## 🛠️ Projeyi Çalıştırmak İçin Gerekli Adımlar
+
+Bu proje, hassas bilgileri saklamak için bir `.env` dosyası kullanır. Bu dosya, güvenlik amacıyla GitHub deposuna dahil edilmemiştir.
+
+Projenin çalışması için `.env` dosyasını oluşturmanız gerekmektedir.
+
+### 📄 `.env` Dosyasını Oluşturma
+1. Proje dizininde bir `.env` dosyası oluşturun.
+2. Aşağıdaki değişkenleri `.env` dosyasına ekleyin:
+
+`REACT_APP_API_BASE_URL=http://your-api-url.com`
+
+⚠️ **Not:** `http://your-api-url.com` kısmını doğru API URL'si ile değiştirin. Bu bilgiyi bizimle iletişime geçerek öğrenebilirsiniz.
+
+---
+
+## 🛠️ Projeyi Çalıştırma Adımları
+
+1. **Depoyu clone edin:**
+
+   ```bash
+   git clone https://github.com/Melike753/Chandelier-Store-Website.git
+
+2. **Proje dizinine girin:**
+   
+   ```bash
+   cd <project-directory>
+
+3. **`.env` dosyasını oluşturun ve yukarıdaki değişkenleri ekleyin.**
+
+4. **Gerekli bağımlılıkları yükleyin:**
+
+   ```bash
+   npm install
+
+5. **Projeyi çalıştırın:**
+
+   ```bash
+   npm start
+
+---
+
 ## 🙏 Teşekkürler
 
 Bu projenin geliştirilmesi sürecinde katkılarıyla büyük destek sağlayan ve backend altyapısını başarıyla yöneten [**Taha Koçer**](https://github.com/tahaakocer)'e sonsuz teşekkürlerimi sunuyorum. </br>
